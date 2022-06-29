@@ -7,9 +7,6 @@ const tbody = document.querySelector("[data-tbody]");
 let counter = 10;
 let allTodos = [];
 
-/**
- * TODO:-----------------------FIX CONTROLS COUNTER-----------------------
-*/
 const printTodos = () => {
   fetch("https://jsonplaceholder.typicode.com/todos")
     .then((response) => response.json())
@@ -26,10 +23,6 @@ const printTodos = () => {
           complied.textContent = todo.completed;
           tbody.appendChild(tableRow);
           console.log("counter attuale: " + counter);
-        } else if (counter > 200) {
-          counter = 10;
-        } else if (counter === 0) {
-          counter = 200;
         }
 
         return {id: todo.id, title: todo.title, completed: todo.completed, element: tableRow};
@@ -37,14 +30,24 @@ const printTodos = () => {
     });
 };
 
+const counterCheck = () => {
+  if (counter > 200) {
+    counter = 10;
+  } else if (counter === 0) {
+    counter = 200;
+  }
+}
+
 nextButton.addEventListener("click", () => {
   counter += 10;
+  counterCheck()
   tbody.innerHTML = "";
   printTodos();
 });
 
 prevButton.addEventListener("click", () => {
   counter -= 10;
+  counterCheck()
   tbody.innerHTML = "";
   printTodos();
 });
