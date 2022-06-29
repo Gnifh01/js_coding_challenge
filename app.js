@@ -32,7 +32,7 @@ const printTodos = () => {
           counter = 200;
         }
 
-        return {id: todo.id, title: todo.title, completed: todo.completed, element: tableRow,};
+        return {id: todo.id, title: todo.title, completed: todo.completed, element: tableRow};
       });
     });
 };
@@ -58,7 +58,6 @@ printTodos();
 searchInput.addEventListener("input", (e) => {
   const textValue = e.target.value.toLowerCase();
   allTodos.filter((todo) => {
-  /*   tableRow.innerHTML = ""; */
     if (todo.title.toLowerCase().includes(textValue) || todo.id.toString().includes(textValue)) {
       todo.element.style.display = "table-row";
     } else {

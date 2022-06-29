@@ -43,7 +43,7 @@ body {
 }
 
 #container .search-container #search {
-  width: 40%;
+  width: 36%;
   border: none;
   border-radius: 6px;
   padding: 1rem 1.5rem;
@@ -67,7 +67,7 @@ body {
 }
 
 #container #next {
-  width: 4.2rem;
+  width: 4.5rem;
   height: 40.8rem;
   display: flex;
   justify-content: center;
@@ -86,7 +86,7 @@ body {
 }
 
 #container #prev {
-  width: 4.2rem;
+  width: 4.5rem;
   height: 40.8rem;
   display: flex;
   justify-content: center;
