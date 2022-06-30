@@ -14,19 +14,46 @@
     <title>Coding Challenge</title>
   </head>
   <body>
-    <div id="container">
-
+    <div id="lateral-container">
+      <span class="color" id="color-1"></span>
+      <span class="color" id="color-2"></span>
+      <span class="color" id="color-3"></span>
+      <span class="color" id="color-4"></span>
+    </div>
+    <div id="container" data-todo-container class="color-1">
       <div class="search-container">
-        <label for="search" id="labelSearch">Search by ID or Title</label>
-        <input type="search" id="search" placeholder="Search your Todo..." data-search-input/>
+        <label for="search" id="labelSearch">Search by Todo's Title</label>
+        <input
+          type="search"
+          id="search"
+          placeholder="Search your Todo..."
+          data-search-input
+        />
+        <div class="search-container-plus">
+          <label for="select" id="labelSelect">Order By : </label>
+          <select name="select" id="select" data-todo-select>
+            <optgroup label="ID">
+              <option value="Numerico Crescente">Numerico Crescente</option>
+              <option value="Numerico Decrescente">Numerico Decrescente</option>
+            </optgroup>
+            <optgroup label="Titoli">
+              <option value="Alfabetico Crescente">Alfabetico Crescente</option>
+              <option value="Alfabetico Decrescente">
+                Alfabetico Decrescente
+              </option>
+            </optgroup>
+          </select>
+
+          <label for="select" id="labelSelect">Todos : </label>
+          <select name="select" id="select" data-todo-select-completed>
+            <option value="All">All</option>
+            <option value="True">True</option>
+            <option value="False">False</option>
+          </select>
+        </div>
       </div>
 
       <div class="table-container">
-
-        <button id="prev">
-          <i class="fa-solid fa-arrow-left-long"></i>
-        </button>
-
         <table>
           <tr>
             <th>ID</th>
@@ -43,10 +70,15 @@
             </template>
           </tbody>
         </table>
-
-        <button id="next">
-          <i class="fa-solid fa-arrow-right-long"></i>
-        </button>
+        <div class="sub-container">
+          <button id="prev">
+            <i class="fa-solid fa-arrow-left-long"></i>
+          </button>
+            <h2 class="page-number" data-page-number></h2>
+          <button id="next">
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </button>
+        </div>
       </div>
     </div>
   </body>
